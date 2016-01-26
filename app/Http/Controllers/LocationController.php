@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
+// include required model
 use App\Location;
+
 use Illuminate\Http\Request;
 
 class LocationController extends Controller
 {
     public function index() {
-    	$locations = Location::all();
+        $locations = Location::all();
 
-    	return $this->output($locations);
+        return $this->output($locations);
     }
 
     public function store(Request $request) {
@@ -20,13 +22,13 @@ class LocationController extends Controller
     }
 
     public function show($id) {
-    	$location = Location::find($id);
+        $location = Location::find($id);
 
-    	if($location) {
-    		return $this->output($location);
-    	}
+        if($location) {
+            return $this->output($location);
+        }
 
-    	return $this->notFound('Location not found');
+        return $this->notFound('Location not found');
     }
 
     public function update(Request $request, $id) {

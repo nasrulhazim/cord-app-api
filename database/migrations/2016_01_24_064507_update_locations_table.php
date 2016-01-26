@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLocationsTable extends Migration
+class UpdateLocationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,12 @@ class CreateLocationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('locations', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::table('locations', function (Blueprint $table) {
             $table->string('name',255);
             $table->text('description');
             $table->string('photo',255);
             $table->float('longitude');
             $table->float('latitude');
-            $table->timestamps();
         });
     }
 
@@ -30,6 +28,8 @@ class CreateLocationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('locations');
+        Schema::table('locations', function (Blueprint $table) {
+            //
+        });
     }
 }

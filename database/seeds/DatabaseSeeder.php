@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
 use App\Location;
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +18,7 @@ class DatabaseSeeder extends Seeder
     	Location::truncate();
 
     	// create 50 records
+    	// factory(model::class, number_of_records)->create();
     	factory(Location::class, 50)->create();
         // $this->call('UserTableSeeder');
     }

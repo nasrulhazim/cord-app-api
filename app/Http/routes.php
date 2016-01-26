@@ -10,6 +10,23 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
+/*$app->get('/', function() use ($app) {
+	return $app->version()
+})
+*/
+
+// get list of data or particular data
+// $app->get('/');
+
+// // create new data
+// $app->post('/');
+
+// // update data
+// $app->put('/');
+
+// // delete data
+// $app->delete('/');
+
 
 // set welcome message
 $app->get('/', 'Controller@welcome');
